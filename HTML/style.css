@@ -1,0 +1,37 @@
+	
+*{	
+	margin:0;
+	padding:0;
+	font-family: Verdana, "Arial", Helvetica, sans-serif !important;	
+}
+#container{
+	width:1300px;
+	background:#24262A;
+	min-height:900px;
+	margin:auto;
+}
+#header{
+	width: 100%;
+	background: #2d2f35;
+	min-height: 100px;
+
+}
+#nav{
+	min-height: 300px;
+	background: url(hinhanh/home_intro_image.jpg) no-repeat;
+	width: 1366px;
+}
+#menu{
+	width: 100%;
+	min-height: 100px;
+}
+#main{
+	width: 100%;
+	min-height: 300px ;
+}
+#footer{
+	width: 100%;
+	min-height: 100px;
+	background-image: url(hinhanh/bg_footer.gif);
+
+}
