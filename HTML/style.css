@@ -1,0 +1,125 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+body {
+	font-size:12px;
+	color: #FFFFFF;
+}
+
+#container{
+	width:1200px;
+	margin:auto;
+	background:#24262a;
+	min-height:700px;
+}
+#header {
+	width:100%;
+	height:112px;
+	background:#2d2f35;
+}
+#banner{
+	height:300px;
+	background:url("hinhanh/bg_home_intro_bottom.gif") repeat-x left bottom;
+	width:100%;
+	position:relative;
+}
+#banner .banner__img{
+	position:absolute;
+	top:0px;
+	left:619px;
+}
+
+#banner .banner__content{
+	width: 400px;
+	margin-left:120px;	
+}
+
+#banner .banner__content h3{
+	color:#ffff00 ;
+	font-family:monospace !important;
+	margin-bottom:33px;
+	font-size:20px;
+	font-weight:500;
+}
+#banner .banner__content p{
+	color: #FFFFFF;
+	font-size:9pt;
+}
+
+
+#menu {
+	width:100%;
+	height: 132px;
+	background:#2d2f35;
+	border-top:1px solid #474a51;
+}
+#menu .menu__menu-list{
+	margin-top:20px;
+	margin-left:130px;
+	
+}
+#menu .menu__menu-item{
+	width:220px;
+	height:102px;
+	margin-left:15px;
+	float:left;	
+	position: relative;	
+}
+#menu .menu__index{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#main{
+	width:100%;
+	height:380px;
+	background:#2d2f35;
+	border-bottom:1px solid #474a51;
+	border-top:1px solid #474a51;
+}
+#main .main__content{
+	margin : 10px 120px;  
+}
+#main .main__content-left{
+	width: 380px;
+	float:left;
+	margin-left:120px;
+	background-image:url(hinhanh/home_services_bg_design.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	min-height: 360px;
+}
+#main .main__content-right{
+	width: 380px;
+	float:right;
+	margin-right:120px;
+	background-image:url(hinhanh/home_services_bg_marketing.gif);
+	background-position: left top;
+	background-repeat: no-repeat;		
+}
+#main .main__content-right p{
+	text-align: justify;
+	margin-top: 30px;	
+}
+#main h2{
+	color:#ffff00;
+	font-family:monospace !important;
+	font-size:18px;
+	font-weight:400;
+}
+#main p{
+	text-align: justify;	
+}
+#footer{
+	height: 110px;
+	background-image:url(hinhanh/bg_footer.gif);
+	background-position: center;
+	background-repeat:no-repeat;
+}
+#footer p{	
+    text-align: center;
+    font-size: 10pt;
+}
