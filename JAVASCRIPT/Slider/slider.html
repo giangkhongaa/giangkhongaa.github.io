@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo slider</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id ="slider_show">
+		<img class="img__slide" src ="image/img_1.jpg" id ="slide" alt="slide" />
+	    <input class="prev" id="button_prev" type="button" value="<<" onclick="prev()" />
+		<input class="next" id="button_next" type="button" value=">>"onclick="next()" />
+		<ul>
+			<li><img class="img__mini" src ="image/img_1.jpg" id ="img_mini_1" alt="img_1" onclick="selectSlide(0)" /></li>
+			<li><img class="img__mini" src ="image/img_2.jpg" id ="img_mini_2" alt="img_2" onclick="selectSlide(1)"/></li>
+			<li><img class="img__mini" src ="image/img_3.jpg" id ="img_mini_3" alt="img_3" onclick="selectSlide(2)"/></li>
+			<li><img class="img__mini" src ="image/img_4.jpg" id ="img_mini_4" alt="img_4" onclick="selectSlide(3)"/></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var COUNT =0;
+		var IMGARRAY=[];
+		IMGARRAY[0]='image/img_1.jpg';
+		IMGARRAY[1]='image/img_2.jpg';
+		IMGARRAY[2]='image/img_3.jpg';
+		IMGARRAY[3]='image/img_4.jpg';
+	    function next() {
+			COUNT++;
+			if(COUNT>3) {
+				COUNT = 0;
+			}
+			document.images["slide"].src = IMGARRAY[COUNT];
+		}
+		function prev() {
+			COUNT--;
+			if(COUNT<0) {
+				COUNT = 3;
+			}
+			document.images["slide"].src = IMGARRAY[COUNT];
+		}
+		function selectSlide(index_slide) {
+			document.images["slide"].src = IMGARRAY[index_slide];
+		}
+		function autoSlide() {
+			var auto = setInterval(function() {next()},3000);
+		}
+		autoSlide();
+	</script>
+		
+		
+</body>
+</html>
