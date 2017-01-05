@@ -1,0 +1,44 @@
+#slider_show{
+	height: 800px;;
+	width: 1000px;
+	margin: auto;
+	padding: 0;
+}
+#slider_show .img__slide{
+	height: 400px;
+	width: 700px;
+	margin-top: 50px;
+	margin-left: 150px;
+}
+#slider_show .img__mini{
+	height: 40px;
+	width: 70px;
+}
+#slider_show .img__mini:hover{
+	border: 2px solid #ff0000;
+}
+.prev{
+	color: #000000;
+	font-size: 50px;
+	height:200px;
+	width: 100px;
+	position: absolute;
+	top: 150px;
+	left: 200px;
+}
+.next{
+	color: #000000;
+	font-size: 50px;
+	height:200px;
+	width: 100px;
+	position: absolute;
+	top: 150px;
+	right: 200px;
+}
+ul{
+	margin-left: 100px;
+}
+li{
+	display: inline;
+	margin-left: 10px;
+}
