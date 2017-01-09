@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calendar</title>
+		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div id="calendar__show" ></div>
+			<input class="calendar__show--text" type="text" id="date-output"/>
+			<a href="#" class="calendar--icon" onClick="onClickCalendar();">
+			<img src="image/img_calendar.gif" alt="picker"/></a>
+		<div id ="calendar">			
+			<table class="container__firstcell" border ="0">			
+				<tr>
+				<td class="cell-1"><button type = "button" onClick = "prevYear();"><<=</button></td>
+				<td class="cell-1"><button type = "button" onClick = "prevMonth();"><=</button></td>
+				<td class="cell-1" colspan="2"><select id="selectMonth" onchange="loadDay();"></td>
+				<td class="cell-1"><select id="selectYear" onchange="loadDay();"></td>
+				<td class="cell-1"><button type = "button" onClick = "nextMonth();">=></button></td>
+				<td class="cell-1"><button type = "button" onClick = "nextYear();">=>></button></td>
+				</tr>
+				<tr>
+				<td class="cell-1">Sun</td>
+				<td class="cell-1">Mon</td>
+				<td class="cell-1">Tue</td>
+				<td class="cell-1">Wes</td>
+				<td class="cell-1">Thu</td>
+				<td class="cell-1">Fri</td>
+				<td class="cell-1">Sat</td>
+				</tr>			
+			</table>
+			<div  id= "days">				
+			</div>
+		</div>
+	</body>
+	
+</html>
