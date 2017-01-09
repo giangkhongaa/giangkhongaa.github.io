@@ -124,6 +124,8 @@ function onClickCalendar()
 	loadYear();
 	loadMonth();
 	loadDay();
+	var date= new Date();
+	document.getElementById("date-output").value=date.getDate()+"/"+date.getMonth()+1+"/"+date.getFullYear();
 	document.getElementById("calendar").style.display='block';
 	
 } 
