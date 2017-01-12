@@ -9,10 +9,10 @@ body {
 }
 
 #container{
-	width:1200px;
+	width: 1263px;
 	margin:auto;
 	background:#24262a;
-	min-height:700px;
+	min-height: 1055px;
 }
 #header {
 	width:100%;
@@ -25,25 +25,26 @@ body {
 	width:100%;
 	position:relative;
 }
-#banner .banner__img{
+#banner .banner--img{
 	position:absolute;
 	top:0px;
 	left:619px;
 }
 
-#banner .banner__content{
+#banner .banner--content{
+	margin-top: 5px;
 	width: 400px;
-	margin-left:120px;	
+	margin-left: 133px;	
 }
 
-#banner .banner__content h3{
+#banner .banner--content h3{
 	color:#ffff00 ;
 	font-family:monospace !important;
-	margin-bottom:33px;
 	font-size:20px;
 	font-weight:500;
 }
-#banner .banner__content p{
+#banner .banner--content p{
+	margin-top: 40px;
 	color: #FFFFFF;
 	font-size:9pt;
 }
@@ -51,19 +52,19 @@ body {
 
 #menu {
 	width:100%;
-	height: 132px;
+	height: 145px;
 	background:#2d2f35;
 	border-top:1px solid #474a51;
 }
 #menu .menu__menu-list{
-	margin-top:20px;
-	margin-left:130px;
+	margin-top: 28px;
+	margin-left: 178px;
 	
 }
 #menu .menu__menu-item{
 	width:220px;
-	height:102px;
-	margin-left:15px;
+	height: 100px;
+	margin-left: 15px;
 	float:left;	
 	position: relative;	
 }
@@ -75,7 +76,7 @@ body {
 
 #main{
 	width:100%;
-	height:380px;
+	height: 405px;
 	background:#2d2f35;
 	border-bottom:1px solid #474a51;
 	border-top:1px solid #474a51;
@@ -86,23 +87,25 @@ body {
 #main .main__content-left{
 	width: 380px;
 	float:left;
-	margin-left:120px;
+	margin-left: 133px;
+	margin-top: 5px;
 	background-image:url(hinhanh/home_services_bg_design.gif);
 	background-position: right bottom;
 	background-repeat: no-repeat;
 	min-height: 360px;
 }
 #main .main__content-right{
+	margin-top: 5px;
 	width: 380px;
 	float:right;
-	margin-right:120px;
+	margin-right: 133px;
 	background-image:url(hinhanh/home_services_bg_marketing.gif);
 	background-position: left top;
 	background-repeat: no-repeat;		
 }
 #main .main__content-right p{
 	text-align: justify;
-	margin-top: 30px;	
+	margin-top: 50px;	
 }
 #main h2{
 	color:#ffff00;
