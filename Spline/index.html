@@ -14,10 +14,14 @@
                             xLabel: 'QUY LAM VIEC', 
                             yLabel: 'HISTORY',
                             labelFont: '19pt Arial', 
-                            dataPointFont: '10pt Arial',                         
-                           };
+                            dataPointFont: '10pt Arial',
+							dataPoints: [{ x: '4', y: 3.9 }, 
+                                         { x: '2', y: 7.2 }, 
+                                         { x: '4', y: 8 }, 
+                                         { x: '2', y: 4 }]
+                           };							
             CanvasChart.render('canvas', dataDef);
-			CanvasChart.drawSpline('canvas');
+			CanvasChart.drawSpline();
         });
     </script>
 </body>
