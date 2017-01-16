@@ -1,13 +1,15 @@
 <?php
-	$conn=mysql_connect("localhost:8080", "root", "root") or die("can't connect database");
-	mysql_select_db("login_acc",$conn);
-	$sql="select * from account";
-    $query=mysql_query($sql);
-	if(mysql_num_rows($query) == 0){
-    echo "Chua co du lieu";
-	} else {
-		while($row=mysql_fetch_array($query)){
-			echo $row['username'] ." - ".$row['password']."<br />";
-		}
+	$user = intval($_GET['user']);
+
+	$con = mysqli_connect("localhost", "root");
+	if (!$con) {
+		die('Could not connect: ' . mysqli_error($con));
 	}
+	mysqli_select_db($con,"login_acc");
+	$sql="SELECT * FROM account WHERE username = '".$user."'";
+	$result = mysqli_query($con,$sql);
+	if (mysqli_num_rows($result)== 0)
+		echo "user không trùng khớp";
+	else
+		echo "Submit thành công";
 ?>

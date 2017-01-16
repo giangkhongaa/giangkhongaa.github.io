@@ -19,7 +19,7 @@ var SplineChart = function () {
     var positionYArray = []; //array containing the Y coordinate of the data point after switching to coordinate Cavas
     var splineStyle; // strokeStyle of spline
     var flag = false; //flag identification point has been executed or not
-
+    var distanceElementY //distance elements vertical axis
     /*
     * container fuctionc and initialization variable, It is called out of use.
     *
@@ -32,7 +32,9 @@ var SplineChart = function () {
         chartWidth = canvas.getAttribute('width');
         xMax = chartWidth - (margin.left + margin.right);
         yMax = chartHeight - (margin.top / 2 + margin.bottom);
-        splineStyle = (data.splineStyle != null) ? data.splineStyle : '#019ed5'; //if splineStyle null then receive the defaults
+        distanceElementY = Math.floor((yMax - margin.top) / data.maxNumberYAxic);
+        alert(distanceElementY);
+        splineStyle = (data.splineStyle != null) ? data.splineStyle : '#019ed5'; //if splineStyle null then receive the defaults       
         context = canvas.getContext("2d");
 
         //convert data point to the coordinates canvas (my function)
@@ -49,29 +51,30 @@ var SplineChart = function () {
 
         var elementX = margin.left - margin.left / 3; // The distance of the point on the X axis
         var augmentY = 0; // The distance jump of the point on the Y axis
-        context.font = "15px Arial";
-        context.fillStyle = "#000000";
+        context.font = (data.xAxisFont != null) ? data.xAxisFont : "15px Arial";
+        context.fillStyle = (data.axisStyle != null) ? data.axisStyle : "#000000";
 
-        // the Y axis maximum value = 5 
-        for (var i = 0; i < 6; i++) {
+        // the Y axis maximum value = maxNumberYAxis 
+        for (var i = 0; i <= parseInt(data.maxNumberYAxic) ; i++) {
             // display values on the y axis
             context.fillText(i, elementX, yMax - augmentY);
             // Draw horizontal lines (my function)
             drawLine(margin.left - 10, yMax - augmentY, xMax, yMax - augmentY, '#f4f3f1', 1);
             //Increase jump
-            augmentY += 50;
+            augmentY += distanceElementY;
         }
 
         // the Y axis dependent data point transmitted from the outside
         for (var i = 0; i < data.dataPoints.length; i++) {
-            context.fillStyle = '#000000';
+            context.fillStyle = (data.axisStyle != null) ? data.axisStyle : "#000000";
             // display values on the X axis
             context.fillText(data.dataPoints[i].x, positionXArray[i], yMax + 20);
+            // Style of Horizontal lines blur (should be fixed)
             context.fillStyle = '#655f5f';
             // display dots on the x axis 
             context.fillRect(positionXArray[i], yMax, 2, 4);
             // display point of data Point (my function)
-            drawPoint(positionXArray[i], positionYArray[i], 4);
+            drawPoint(positionXArray[i], positionYArray[i], 3);
         }
 
         // display comment (my function)
@@ -136,7 +139,7 @@ var SplineChart = function () {
         context.fillStyle = splineStyle; // assigning splineStyle
         // display line
         context.fillRect(xMax + margin.right / 2, margin.top, 35, 3);
-        context.fillStyle = '#000000';
+        context.fillStyle = (data.commentStyle != null) ? data.commentStyle : "#000000";
         for (var i = 0; i < xLableArray.length; i++) {
             //display value after  cut X-axis text
             context.fillText(xLableArray[i], positionXText, margin.top + i * 20 + 8);
@@ -183,13 +186,18 @@ var SplineChart = function () {
     *
     */
     var formatDataPoint = function () {
+        var augmentX = 0;
+        var distanceX = ((xMax - (margin.left - 10)) / data.dataPoints.length);
         for (var i = 0; i < data.dataPoints.length; i++) {
+           
             // compute distance between ponit X-axis
-            var positionX = ((xMax - margin.top) / data.dataPoints.length) * (i + 1);
-            // compute distance between ponit Y-axis (fixed: 50px)
-            var positionY = yMax - data.dataPoints[i].y * 50;
+            var positionX = margin.left - 10 + augmentX + distanceX / 2;
+            //
+            augmentX += distanceX;
+            // compute distance between ponit Y-axis 
+            var positionY = yMax - data.dataPoints[i].y * distanceElementY;
             // empty spaces in the begin and end
-            positionX += margin.top / 2;
+            // positionX += margin.top / 2;
             // add an element to the array container X
             positionXArray.push(positionX);
             //add an element to the array container Y
@@ -262,7 +270,7 @@ var SplineChart = function () {
                 // display text
                 context.fillText(valuePoint, positionXArray[i], positionYArray[i] - 20);
                 // redraw larger radius points
-                drawPoint(positionXArray[i], positionYArray[i], 6);
+                drawPoint(positionXArray[i], positionYArray[i], 4);
                 // have point selected 
                 flag = true;
                 break;
