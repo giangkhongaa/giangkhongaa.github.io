@@ -32,8 +32,7 @@ var SplineChart = function () {
         chartWidth = canvas.getAttribute('width');
         xMax = chartWidth - (margin.left + margin.right);
         yMax = chartHeight - (margin.top / 2 + margin.bottom);
-        distanceElementY = Math.floor((yMax - margin.top) / data.maxNumberYAxic);
-        alert(distanceElementY);
+        distanceElementY = Math.floor((yMax - margin.top) / data.maxNumberYAxic);//distance elements horizontal axis
         splineStyle = (data.splineStyle != null) ? data.splineStyle : '#019ed5'; //if splineStyle null then receive the defaults       
         context = canvas.getContext("2d");
 
@@ -107,7 +106,7 @@ var SplineChart = function () {
         context.fillStyle = titleStyle; //assigning titleFont give fillStyle titile
         var textSizeTitile = context.measureText(data.title).width; //width of title
         // display title
-        context.fillText(data.title, margin.left + (textSizeTitile / 2), (margin.top / 2));// write
+        context.fillText(data.title, chartWidth / 2, (margin.top - 15));// write
 
         //X-axis text
         context.save();
@@ -186,18 +185,16 @@ var SplineChart = function () {
     *
     */
     var formatDataPoint = function () {
-        var augmentX = 0;
+        var augmentX = 0;// jumb ponit X-axis
+        // compute distance between ponit X-axis
         var distanceX = ((xMax - (margin.left - 10)) / data.dataPoints.length);
         for (var i = 0; i < data.dataPoints.length; i++) {
-           
-            // compute distance between ponit X-axis
+            // change data point X from outside to X coordinates canvas
             var positionX = margin.left - 10 + augmentX + distanceX / 2;
-            //
+            // increased jumb
             augmentX += distanceX;
-            // compute distance between ponit Y-axis 
+            // change data point Y from outside to Y coordinates canvas
             var positionY = yMax - data.dataPoints[i].y * distanceElementY;
-            // empty spaces in the begin and end
-            // positionX += margin.top / 2;
             // add an element to the array container X
             positionXArray.push(positionX);
             //add an element to the array container Y
@@ -262,6 +259,10 @@ var SplineChart = function () {
                 context.strokeStyle = splineStyle;
                 // display rectangle
                 context.rect(positionXArray[i] - 25, positionYArray[i] - 40, 50, 30);
+                // background rectangle
+                context.fillStyle = "#f6f6f6";
+                // fill rectangle
+                context.fill();
                 context.stroke();
                 // color text display valuePoint
                 context.fillStyle = "#032538";

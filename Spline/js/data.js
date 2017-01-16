@@ -1,5 +1,5 @@
 var data = {
-    title: 'BIỂU ĐỒ LỊCH SỬ ĐÁNH GIÁ 360',
+    title: 'BIỂU ĐỒ LỊCH SỬ ĐÁNH GIÁ 360', 
     titleFont: '20pt Myriad Pro',
     titleStyle: 'red',
     xLabel: 'Tên dự án',
