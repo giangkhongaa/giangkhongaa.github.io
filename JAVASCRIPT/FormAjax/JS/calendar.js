@@ -14,7 +14,7 @@ function loadYear()
 {
 	var date=new Date();// lay ngay hien tai
 	var yearCuren=date.getFullYear(); //lay nam hien tai
-	// duyet nam tu @1990 toi ngay toi thoi hạn
+	// duyet nam tu @1990 toi ngay toi thoi h???n
 	for(i=1900; i<2031;i++) {
 		if (i==yearCuren) {
 			document.getElementById("selectYear").innerHTML +="<option  selected='selected'  value='"+i+"' >"+i+"</option>";
@@ -118,6 +118,7 @@ function selectDay(id)
 	var mon=document.getElementById("selectMonth").value;
 	var year=document.getElementById("selectYear").value;
 	document.getElementById("date-output").value=id+"/"+mon+"/"+year;
+	document.getElementById("calendar").style.display='none';
 }
 function onClickCalendar() 
 {

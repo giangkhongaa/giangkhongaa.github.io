@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Ajax</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="JS/ajax.js"></script>
+    <script type="text/javascript" src="JS/calendar.js"></script>
+</head>
+<body>
+    <form>
+        <div id="container">
+            <p class="ajax--lable">Username:</p>
+            <input class="ajax--input" type="text" required id="username" onchange="checkUser()" />
+            <p class="ajax--error" id="username_error"></p>
+            <p class="ajax--lable">Password:</p>
+            <input class="ajax--input" type="text" id="password" onchange="checkPassword()" />
+            <p class="ajax--error" id="password_error"></p>
+            <p class="ajax--lable">Email:</p>
+            <input class=" ajax--input" type="text" id="email" onchange="checkEmail()" />
+            <p class="ajax--error" id="email_error"></p>
+            <p class="ajax--lable">Birthday:</p>
+            <input class="calendar__show--text" type="text" id="date-output" />
+            <div id="calendar__show"></div>
+            <a href="#" class="calendar--icon" onclick="onClickCalendar()">
+                <img src="image/img_calendar.gif" alt="picker" />
+            </a>
+            <div id="calendar">
+                <table class="container__firstcell">
+                    <tr>
+                        <td class="cell-1"><button class="font--size" type="button" onclick="prevYear();">Prev Year</button></td>
+                        <td class="cell-1"><button class="font--size" type="button" onclick="prevMonth();">Prev Month</button></td>
+                        <td class="cell-1" colspan="2"><select class="font--size" id="selectMonth" onchange="loadDay();"></select></td>
+                        <td class="cell-1"><select class="font--size" id="selectYear" onchange="loadDay();"></select></td>
+                        <td class="cell-1"><button class="font--size" type="button" onclick="nextMonth();">Next Month</button></td>
+                        <td class="cell-1"><button class="font--size" type="button" onclick="nextYear();">Next Year</button></td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">Sun</td>
+                        <td class="cell-1">Mon</td>
+                        <td class="cell-1">Tue</td>
+                        <td class="cell-1">Wes</td>
+                        <td class="cell-1">Thu</td>
+                        <td class="cell-1">Fri</td>
+                        <td class="cell-1">Sat</td>
+                    </tr>
+                </table>
+                <div id="days">
+                </div>
+            </div>
+            <div id="container__button">
+                <button type="button" id="submit" class="ajax--button" onclick="submit()">SUBMIT</button>
+                <button type="button" id="refresh" class="ajax--button" onclick="refresh()">REFRESH</button>
+            </div>
+            <div id="result"></div>
+        </div>
+
+    </form>
+
+</body>
+</html>
