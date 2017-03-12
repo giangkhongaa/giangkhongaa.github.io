@@ -1,4 +1,4 @@
-    var data = {
+var data = {
     title: 'BIỂU ĐỒ LỊCH SỬ ĐÁNH GIÁ 360', // titile chart
     titleFont: '20pt Myriad Pro',          // font of title
     titleStyle: 'red',                     // Style of title
@@ -16,7 +16,7 @@
     commentFont: '12pt Myriad Pro',
     hideComment: false,                     //hide status of a comment 
     splineStyle: '#019ed5',                //style of spline
-    lineStyle: 'red',                  //style of line vertical
+    lineStyle: '#f4f3f1',                  //style of line vertical
     maxNumberYAxic: 7,                    //value maximum of y axic with divisible conditions distanceEleOnYAxic
     distanceEleOnYAxic: 1.5,                 //distance elements on the y axis (1 or 1.5)
     dataPoints: [{ x: 'A', y: 2.3 },
