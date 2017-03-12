@@ -1,6 +1,6 @@
 <?php
+	echo "ádasdasdasdas";
 	$user = $_GET['user'];
-
 	$con = mysqli_connect("localhost", "root");
 	if (!$con) {
 		die('Could not connect: ' . mysqli_error($con));
@@ -9,7 +9,7 @@
 	$sql="SELECT * FROM account WHERE username = '".$user."'";
 	$result = mysqli_query($con,$sql);
 	if (mysqli_num_rows($result)== 0)
-		echo "user không trùng khớp";
+		echo "User hợp lệ";
 	else
-		echo "Submit thành công";
+		echo "User bị trùng";
 ?>
